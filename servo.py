@@ -38,8 +38,6 @@ class ServoMotor:
         motorStepCounter = 0
         pinsCount = len(self.pins)
 
-        for pin in self.pins:
-            pin.__init__(pin.gpio_pin)
         for _ in range(self.STEP_COUNT):
             for pin in range(0, pinsCount):
                 GPIO.output(self.pins[pin].gpio_pin, self.STEP_SEQUENCE[motorStepCounter][pin] )

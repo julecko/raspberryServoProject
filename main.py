@@ -17,18 +17,22 @@ try:
     while True:
         time.sleep(0.01)
         if buttonRight.is_pressed():
+            print("Turn right")
             if turning_left:
                 turning_left = False
                 continue
             turning_right = True
+        
         if turning_right:
             motor.turnRight()
         
         if buttonLeft.is_pressed():
+            print("Turn left")
             if turning_right:
                 turning_right = False
                 continue
             turning_left = True
+        
         if turning_left:
             motor.turnLeft()
 except KeyboardInterrupt:
